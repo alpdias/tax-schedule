@@ -27,5 +27,7 @@ lista = []
 for a in links:
     
     lista.append(a['href'])
+    
+print(lista)
 
     
