@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-Created in 04/2020
+Criado em 04/2020
 @Autor: Paulo https://github.com/alpdias
 '''
 
@@ -22,7 +22,7 @@ elementos = corpo.find('ul')
 
 links =  elementos.findAll('a', href=True)
 
-lista = []
+lista = [] # lista com os links para os dias da agenda
 
 for a in links:
     
