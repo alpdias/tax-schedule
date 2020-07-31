@@ -54,6 +54,6 @@ else:
 listaDia = [] # lista para os dias da agenda
 listaLink = [] # lista para os links de cada dia da agenda
 
-for k, v in calendario.items(): # laço para separar dia e link em listas
-    listaDia.append(k)
-    listaLink.append(v)  
+for k, v in calendario.items(): # laço para separar dia e o link em listas
+    listaDia.append(k) # dias
+    listaLink.append(v) # links
