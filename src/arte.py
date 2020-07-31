@@ -9,7 +9,7 @@ Criado em 07/2020
 from time import sleep
 from pyfiglet import Figlet
 
-def artName(timeSleep=0):
+def arteNome(nome, timeSleep=0):
 
     """
     Cria uma arte ASCII para com o nome do programa
@@ -18,9 +18,9 @@ def artName(timeSleep=0):
     """
     
     f = Figlet(font='slant')
-    agendaNome = f.renderText('Agenda Tributaria')
+    nome = f.renderText(nome)
     
-    print(agendaNome)
+    print(nome)
     sleep(timeSleep)
     
     
