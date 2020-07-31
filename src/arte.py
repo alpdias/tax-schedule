@@ -18,8 +18,8 @@ def arteNome(nome, timeSleep=0):
     :return: Retorna arte ASCII
     """
     
-    f = Figlet(font='slant')
-    nome = f.renderText(nome)
+    f = Figlet(font='slant') # recebe a funçao mais a fonte a ser utilizada
+    nome = f.renderText(nome) # recebe o texto
     
     print(nome)
     sleep(timeSleep)
