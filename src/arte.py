@@ -12,16 +12,16 @@ from pyfiglet import Figlet
 def arteNome(nome, timeSleep=0):
 
     """
-    Cria uma arte ASCII para com o nome do programa
+    Cria uma arte ASCII com o nome do enviado
     :param nome: Texto para criar a arte
-    :para timeSleep: Tempo de espera
+    :para timeSleep: Tempo de espera (opcional)
     :return: Retorna arte ASCII
     """
     
     f = Figlet(font='slant') # recebe a funçao mais a fonte a ser utilizada
     nome = f.renderText(nome) # recebe o texto
     
-    print(nome)
+    print(nome) # mostra o texto em forma de arte ASCII
     sleep(timeSleep)
     
     
