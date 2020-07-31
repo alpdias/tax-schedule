@@ -23,7 +23,7 @@ mesProximo = mes + 1 # proximo mes referente ao atual
 
 verificacaoMes = [mesProximo, mesAtual, mesAnterior] # lista com os meses para verificar entrada escolhida
 
-menuNumero = [mesProximo, mesAtual, mesAnterior] # lista com os meses para criar menu
+menuNumero = [mesProximo, mesAtual, mesAnterior] # lista com os meses para criar o menu
 
 menuTexto = [] # lista para receber o nome dos meses
   
