@@ -13,6 +13,7 @@ def arteNome(nome, timeSleep=0):
 
     """
     Cria uma arte ASCII para com o nome do programa
+    :param nome: Texto para criar a arte
     :para timeSleep: Tempo de espera
     :return: Retorna arte ASCII
     """
