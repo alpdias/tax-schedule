@@ -18,21 +18,21 @@ def pegarUrls(mes, ano):
     return: Retorna um dicionário com os dias e a url dos dias
     """
     
-    url = f'https://receita.economia.gov.br/acesso-rapido/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para requisiçao no site
+    url = f'https://receita.economia.gov.br/acesso-rapido/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
 
-    cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para entrar no site simulando usuario
+    cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para entrar no site simulando um usuario
 
     requisicao = requests.get(url, headers=cabecalho) # requisiçao
 
     soup = BeautifulSoup(requisicao.text, 'html.parser') # tratando o html
 
-    corpo = soup.find('div', {'id': 'parent-fieldname-text'}) # procurando 'div' dentro do html pelo id
+    corpo = soup.find('div', {'id': 'parent-fieldname-text'}) # procurando uma 'div' dentro do html pelo id
 
-    elementos = corpo.find('ul') # recebendo as listas ('ul') dentro da 'div'
+    elementos = corpo.find('ul') # recebendo a lista ('ul') dentro da 'div'
 
-    links =  elementos.findAll('a', href=True) # recebendo os elemento html com links
+    links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
 
-    dicio = {} # dicionario para adicionar conteudo
+    dicio = {} # dicionario para adicionar o conteudo
 
     for a in links:
 
