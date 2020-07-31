@@ -5,6 +5,10 @@ Criado em 04/2020
 @Autor: Paulo https://github.com/alpdias
 '''
 
+# bibliotecas python
+import requests
+from bs4 import BeautifulSoup
+
 def pegarUrls(mes, ano):
     
     """
@@ -16,11 +20,11 @@ def pegarUrls(mes, ano):
     
     url = f'https://receita.economia.gov.br/acesso-rapido/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}'
 
-    cabeçalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
+    cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
 
-    requisiçao = requests.get(url, headers=cabeçalho)
+    requisicao = requests.get(url, headers=cabecalho)
 
-    soup = BeautifulSoup(requisiçao.text, 'html.parser')
+    soup = BeautifulSoup(requisicao.text, 'html.parser')
 
     corpo = soup.find('div', {'id': 'parent-fieldname-text'})
 
