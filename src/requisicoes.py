@@ -50,8 +50,6 @@ def pegarItens(url):
     :param url: Link de um dia especifico da agenda tributaria
     return: 
     """
-    
-    url = url # url para a requisiçao no site
 
     cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para entrar no site simulando um usuario
 
