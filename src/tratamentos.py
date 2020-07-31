@@ -8,9 +8,9 @@ Criado em 07/2020
 def mesCalendario(mes):
     
     """
-    Retornar o nome do mês equivalente ao número
-    :param mes: Número do mês
-    :return: Nome do mês
+    -> Retornar o nome do mes equivalente ao numero
+    :param mes: Numero do mes
+    :return: Nome do mes
     """
     
     if mes == 1:
