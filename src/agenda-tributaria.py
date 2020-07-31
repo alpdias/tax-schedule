@@ -46,7 +46,7 @@ mes = int(input('Mês de referência: ')) # entrada do mes escolhido
 print('')
 
 if mes in verificacaoMes:
-    calendario = pegarUrls(requisicoes.mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes selecionado
+    calendario = requisicoes.pegarUrls(tratamentos.mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes selecionado
 
 else:
     print('Mês de referência inválido!')
