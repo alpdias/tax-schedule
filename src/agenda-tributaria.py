@@ -27,7 +27,7 @@ menuNumero = [mesProximo, mesAtual, mesAnterior] # lista com os meses para criar
 
 menuTexto = [] # lista para receber o nome dos meses
   
-menuTexto.append(tratamentos.mesCalendario(mesProximo)) # funçao para receber o nome do mes
+menuTexto.append(tratamentos.mesCalendario(mesProximo)) # funçao para criar o nome do mes
 
 menuTexto.append(tratamentos.mesCalendario(mesAtual))    
         
@@ -46,14 +46,11 @@ mes = int(input('Mês de referência: ')) # entrada do mes escolhido
 print('')
 
 if mes in verificacaoMes:
-    calendario = requisicoes.pegarUrls(tratamentos.mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes selecionado
+    try:
+        calendario = requisicoes.itens(mes, ano) # funçao para buscar os itens da agenda tributaria
+    except AttributeError:
+        print('Mês de referência sem conteúdo!')
 
 else:
     print('Mês de referência inválido!')
 
-listaDia = [] # lista para os dias da agenda
-listaLink = [] # lista para os links de cada dia da agenda
-
-for k, v in calendario.items(): # laço para separar dia e o link em listas
-    listaDia.append(k) # dias
-    listaLink.append(v) # links

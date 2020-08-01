@@ -9,13 +9,16 @@ Criado em 07/2020
 import requests
 from bs4 import BeautifulSoup
 
+# bibliotecas importadas
+import tratamentos
+
 def pegarUrls(mes, ano):
     
     """
     -> Obtem as url's dos dias da agenda tributaria
     :param mes: Mes de referencia
-    param ano: Ano de referencia
-    return: Retorna um dicionario com os dias e a url dos dias
+    :param ano: Ano de referencia
+    return: Retorna um dicionario com os dias e as url's dos eventos
     """
     
     url = f'https://receita.economia.gov.br/acesso-rapido/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
@@ -28,7 +31,7 @@ def pegarUrls(mes, ano):
 
     corpo = soup.find('div', {'id': 'parent-fieldname-text'}) # procurando uma 'div' dentro do html pelo id
 
-    elementos = corpo.find('ul') # recebendo a lista ('ul') dentro da 'div'
+    elementos = corpo.find('ul') # recebendo a lista 'ul' dentro da 'div'
 
     links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
 
@@ -43,17 +46,48 @@ def pegarUrls(mes, ano):
     return dicio
     
   
-def pegarItens(url):
+def itens(mes, ano):
     
     """
     -> Obtem os itens da agenda tributaria a partir de uma url
-    :param url: Link de um dia especifico da agenda tributaria
-    return: 
+    :param mes: Mes de referencia
+    :param ano: Ano de referencia
+    return: Retorna dicionarios com os eventos da agenda tributaria
     """
 
-    cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para entrar no site simulando um usuario
+    calendario = pegarUrls(tratamentos.mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes e ano selecionado
 
-    requisicao = requests.get(url, headers=cabecalho) # requisiçao
+    listaDia = [] # lista para os dias da agenda
 
-    soup = BeautifulSoup(requisicao.text, 'html.parser') # tratando o html
+    for k, v in calendario.items(): # laço para separar os dias em lista
+        listaDia.append(k)
 
+    for k, v in calendario.items(): # laço para separar os link's dos eventos da agenda
+
+        url = v # link's de cada dia da agenda
+
+        cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
+
+        requisicao = requests.get(url, headers=cabecalho) 
+
+        soup = BeautifulSoup(requisicao.text, 'html.parser') 
+
+        corpo = soup.find('div', {'id': 'parent-fieldname-text'}) 
+
+        elemento = corpo.find('tbody') # recebendo o corpo da tabela 'tbody' dentro da 'div'
+
+        conteudo = elemento.findAll('td') # recebendo as linhas da tabela
+
+        lista = []
+
+        for itens in conteudo: # laço para obter os conteudo da agenda tributaria
+            item = itens.text
+            lista.append(item)
+
+        conteudo = {} # dicionario para armazenar os dados da agenda por dia
+
+        conteudo[listaDia[0]] = lista
+        listaDia.pop(0)
+
+        print(conteudo)
+        
