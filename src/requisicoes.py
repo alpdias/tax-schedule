@@ -83,7 +83,8 @@ def itens(mes, ano):
         for itens in elemento: # laço para obter os conteudo da agenda tributaria
             item = itens.findAll('td')
             for linhas in item:
-                lista.append(linhas.text)
+                removedor = (linhas.text).replace('\xa0','').replace('\n','')
+                lista.append(removedor)
 
         conteudo = {} # dicionario para armazenar os dados da agenda por dia
 
