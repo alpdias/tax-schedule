@@ -74,15 +74,16 @@ def itens(mes, ano):
 
         corpo = soup.find('div', {'id': 'parent-fieldname-text'}) 
 
-        elemento = corpo.find('tbody') # recebendo o corpo da tabela 'tbody' dentro da 'div'
+        elemento = corpo.findAll('tbody') # recebendo o corpo da tabela 'tbody' dentro da 'div'
 
-        conteudo = elemento.findAll('td') # recebendo as linhas da tabela
+        #conteudo = elemento.findAll('td') # recebendo as linhas da tabela
 
         lista = []
 
-        for itens in conteudo: # laço para obter os conteudo da agenda tributaria
-            item = itens.text
-            lista.append(item)
+        for itens in elemento: # laço para obter os conteudo da agenda tributaria
+            item = itens.findAll('td')
+            for linhas in item:
+                lista.append(linhas.text)
 
         conteudo = {} # dicionario para armazenar os dados da agenda por dia
 
