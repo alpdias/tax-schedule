@@ -6,7 +6,6 @@ Criado em 04/2020
 '''
 
 # bibliotecas importadas
-import arte
 import requisicoes
 
 # bibliotecas python
