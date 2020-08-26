@@ -9,7 +9,7 @@ pt-BR</br>
 
 --------------------------------------------------------------------------------------------------------------
 
-# Tax Agenda
+# Tax Schedule
 
 Script <strong>Python</strong> to obtain the tax agenda of the Federal Revenue (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) and generate a text file (.txt) in the model csv to download.
 
