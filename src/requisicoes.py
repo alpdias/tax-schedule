@@ -82,15 +82,34 @@ def itens(mes, ano):
 
         for itens in elemento: # laço para obter os conteudo da agenda tributaria
             item = itens.findAll('td')
+            complemento = itens.find('strong')
             
-            for linhas in item:
-                removedor = (linhas.text).replace('\xa0','').replace('\n','')
-                lista.append(removedor)
+            quantidade = len(item)
+            
+            if quantidade % 3 != 0:
+                pass
+            else:
+                for linhas in item:
+                    itemTexto = (linhas.text).replace('\xa0','').replace('\n','')
+                    lista.append(itemTexto)
 
         conteudo = {} # dicionario para armazenar os dados da agenda por dia
 
         conteudo[listaDia[0]] = lista
         listaDia.pop(0)
+        
+        qtd = len(lista)
+        
+        while qtd > 0:
+            
+            for k, v in conteudo.items():
+                print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
+                
+                del conteudo[k][0]
+                del conteudo[k][0]
+                del conteudo[k][0]
+                
+                qtd = qtd - 3 
 
-        print(conteudo)
+
         
