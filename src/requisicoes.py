@@ -9,8 +9,40 @@ Criado em 07/2020
 import requests
 from bs4 import BeautifulSoup
 
-# bibliotecas importadas
-import tratamentos
+def mesCalendario(mes):
+    
+    """
+    -> Retornar o nome do mes equivalente ao numero
+    :param mes: Numero do mes
+    :return: Nome do mes
+    """
+    
+    if mes == 1:
+        mes = 'janeiro'
+    elif mes == 2:
+        mes = 'fevereiro'
+    elif mes == 3:
+        mes = 'marco'
+    elif mes == 4:
+        mes = 'abril'
+    elif mes == 5:
+        mes = 'maio'
+    elif mes == 6:
+        mes = 'junho'
+    elif mes == 7:
+        mes = 'julho'
+    elif mes == 8:
+        mes = 'agosto'
+    elif mes == 9:
+        mes = 'setembro'
+    elif mes == 10:
+        mes = 'outubro'
+    elif mes == 11:
+        mes = 'novembro'
+    elif mes == 12:
+        mes = 'dezembro'
+
+    return mes
 
 def pegarUrls(mes, ano):
     
@@ -55,7 +87,7 @@ def itens(mes, ano):
     return: Retorna dicionarios com os eventos da agenda tributaria
     """
 
-    calendario = pegarUrls(tratamentos.mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes e ano selecionado
+    calendario = pegarUrls(mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes e ano selecionado
 
     listaDia = [] # lista para os dias da agenda
 
