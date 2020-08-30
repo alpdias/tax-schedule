@@ -187,7 +187,11 @@ def itens(mes, ano):
         while qtd > 0:
             
             for k, v in conteudo.items():
-                print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
+
+                if v[0] == '1708':
+                    print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
+                elif v[0] == '5952':
+                    print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 
                 del conteudo[k][0]
                 del conteudo[k][0]
