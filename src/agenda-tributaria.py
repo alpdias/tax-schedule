@@ -24,8 +24,6 @@ verificacaoMes = [mesProximo, mesAtual, mesAnterior] # lista com os meses para v
 
 menuNumero = [mesProximo, mesAtual, mesAnterior] # lista com os meses para criar o menu
 
-menuTexto = [] # lista para receber o nome dos meses
-
 def mesCalendario(mes):
     
     """
@@ -60,7 +58,9 @@ def mesCalendario(mes):
         mes = 'dezembro'
 
     return mes
-  
+
+
+menuTexto = [] # lista para receber o nome dos meses
     
 menuTexto.append(mesCalendario(mesProximo)) # funçao para criar o nome do mes
 
