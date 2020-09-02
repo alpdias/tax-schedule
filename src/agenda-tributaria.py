@@ -136,7 +136,7 @@ def itens(mes, ano):
     -> Obtem os itens da agenda tributaria a partir de uma url
     :param mes: Mes de referencia
     :param ano: Ano de referencia
-    return: Retorna dicionarios com os eventos da agenda tributaria
+    return: Retorna os eventos da agenda tributaria no modelo csv
     """
 
     calendario = pegarUrls(mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes e ano selecionado
@@ -187,11 +187,15 @@ def itens(mes, ano):
         while qtd > 0:
             
             for k, v in conteudo.items():
-
+                
+                '''
                 if v[0] == '1708':
                     print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 elif v[0] == '5952':
                     print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
+                '''
+                
+                print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 
                 del conteudo[k][0]
                 del conteudo[k][0]
