@@ -11,6 +11,8 @@ from bs4 import BeautifulSoup
 from pyfiglet import Figlet
 from time import sleep
 from datetime import date
+import os
+import csv
 
 atual = date.today() # data atual
 mes = atual.month # mes atual
@@ -94,6 +96,8 @@ for i, menuTexto in enumerate(menuTexto):  # loop para criar menu
     
 print('')    
 mes = int(input('Mês de referência: ')) # entrada do mes escolhido
+print('')
+nomeArquivo = str(input('Nome do arquivo: ')) # nome para o arquivo de saida
 print('')
 
 def pegarUrls(mes, ano):
@@ -186,7 +190,7 @@ def itens(mes, ano):
         
         while qtd > 0:
             
-            for k, v in conteudo.items():
+            #for k, v in conteudo.items():
                 
                 '''
                 if v[0] == '1708':
@@ -195,6 +199,9 @@ def itens(mes, ano):
                     print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 '''
                 
+                # OU
+                
+                '''           
                 print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 
                 del conteudo[k][0]
@@ -202,8 +209,22 @@ def itens(mes, ano):
                 del conteudo[k][0]
                 
                 qtd = qtd - 3 
+                '''
 
-                
+            caminhoSaida = ('C:' + os.sep + 'Users' + os.sep + os.getlogin() + os.sep + 'Desktop' + os.sep) # caminho de saida para o arquivo
+            novoArquivo = caminhoSaida + f'{nomeArquivo}.txt' # tipo de arquivo
+            with open(novoArquivo, 'w', newline='') as linhasSaida:
+                escritaArquivo = csv.writer(linhasSaida) 
+                for k, v in conteudo.items():
+                    escritaArquivo.writerow(f'{k}; {v[0]}; {v[1]}; {v[2]};') # escrita do conteudo no arquivo
+
+                    del conteudo[k][0]
+                    del conteudo[k][0]
+                    del conteudo[k][0]
+
+                    qtd = qtd - 3                      
+
+                        
 if mes in verificacaoMes:
     try:
         calendario = itens(mes, ano) # funçao para buscar os itens da agenda tributaria
