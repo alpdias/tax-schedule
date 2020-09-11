@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from pyfiglet import Figlet
 from time import sleep
 from datetime import date
+import platform
 import os
 import csv
 
@@ -211,8 +212,13 @@ def itens(mes, ano):
                 
                 qtd = qtd - 3 
             '''
-
-            caminhoSaida = ('C:' + os.sep + 'Users' + os.sep + os.getlogin() + os.sep + 'Desktop' + os.sep) # caminho de saida para o arquivo
+            meuSistema = platform.system() # verificar o sistema que esta rodando
+            
+            if meuSistema == 'Linux':
+                caminhoSaida = os.getcwd() # caminho de saida para o arquivo em Linux
+            else:
+                caminhoSaida = ('C:' + os.sep + 'Users' + os.sep + os.getlogin() + os.sep + 'Desktop' + os.sep) # caminho de saida para o arquivo em Windows
+                
             novoArquivo = caminhoSaida + f'{nomeArquivo}.txt' # tipo de arquivo
             
             with open(novoArquivo, 'a', newline='') as linhasSaida:
@@ -220,7 +226,7 @@ def itens(mes, ano):
                 
                 for k, v in conteudo.items():
                     
-                    saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};')
+                    saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};').replace('"','')
                     escritaArquivo.writerow([saidaConteudo]) # escrita do conteudo no arquivo
 
                     del conteudo[k][0]
