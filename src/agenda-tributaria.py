@@ -236,6 +236,7 @@ def itens(mes, ano):
 
                        
 if mes in verificacaoMes:
+    
     try:
         calendario = itens(mes, ano) # funçao para buscar os itens da agenda tributaria
     except AttributeError:
