@@ -9,6 +9,8 @@ pt-BR</br>
 
 ![agenda-tributaria](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria.png)
 
+* <strong>Nota:</strong> Em sistemas Linux o arquivo é salvo dentro da pasta de trabalho que está rodando o script, e no sistema Windows o arquivo é salvo na área de trabalho da máquina.
+
 --------------------------------------------------------------------------------------------------------------
 
 # Tax Schedule
@@ -21,5 +23,7 @@ Coding: -&lowast;- coding: utf-8 -&lowast;-</br>
 pt-BR</br>
 
 ![agenda-tributaria](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria.png)
+
+* <strong>Note:</strong> On Linux systems the file is saved inside the workbook that is running the script, and on the Windows system the file is saved on the Desktop.
 
 ---------------------------------------------------------------------------------------------------------------
