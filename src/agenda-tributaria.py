@@ -194,16 +194,13 @@ def itens(mes, ano):
             '''
             for k, v in conteudo.items():
                 
-                
                 if v[0] == '1708':
                     print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 elif v[0] == '5952':
                     print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
-              
                 
                 OU
-                
-                     
+                      
                 print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 
                 del conteudo[k][0]
@@ -212,17 +209,19 @@ def itens(mes, ano):
                 
                 qtd = qtd - 3 
             '''
+            
             meuSistema = platform.system() # verificar o sistema que esta rodando
             
             if meuSistema == 'Linux':
                 caminhoSaida = os.getcwd() # caminho de saida para o arquivo em Linux
+                
             else:
                 caminhoSaida = ('C:' + os.sep + 'Users' + os.sep + os.getlogin() + os.sep + 'Desktop' + os.sep) # caminho de saida para o arquivo em Windows
                 
             novoArquivo = caminhoSaida + f'{nomeArquivo}.txt' # tipo de arquivo
             
             with open(novoArquivo, 'a', newline='') as linhasSaida:
-                escritaArquivo = csv.writer(linhasSaida) 
+                escritaArquivo = csv.writer(linhasSaida, escapechar=' ', quoting=csv.QUOTE_NONE) 
                 
                 for k, v in conteudo.items():
                     
