@@ -214,11 +214,11 @@ def itens(mes, ano):
             
             if meuSistema == 'Linux':
                 caminhoSaida = os.getcwd() # caminho de saida para o arquivo em Linux
+                novoArquivo = f'{nomeArquivo}.txt' # tipo de arquivo
                 
             else:
-                caminhoSaida = ('C:' + os.sep + 'Users' + os.sep + os.getlogin() + os.sep + 'Desktop' + os.sep) # caminho de saida para o arquivo em Windows
-                
-            novoArquivo = caminhoSaida + f'{nomeArquivo}.txt' # tipo de arquivo
+                caminhoSaida = ('C:' + os.sep + 'Users' + os.sep + os.getlogin() + os.sep + 'Desktop' + os.sep) # caminho de saida para o arquivo em Windows    
+                novoArquivo = caminhoSaida + f'{nomeArquivo}.txt' # tipo de arquivo
             
             with open(novoArquivo, 'a', newline='') as linhasSaida:
                 escritaArquivo = csv.writer(linhasSaida, escapechar=' ', quoting=csv.QUOTE_NONE) 
