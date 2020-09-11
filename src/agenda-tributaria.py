@@ -225,7 +225,7 @@ def itens(mes, ano):
                 
                 for k, v in conteudo.items():
                     
-                    saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};').replace('"','')
+                    saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};')
                     escritaArquivo.writerow([saidaConteudo]) # escrita do conteudo no arquivo
 
                     del conteudo[k][0]
