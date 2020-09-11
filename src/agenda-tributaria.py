@@ -190,18 +190,19 @@ def itens(mes, ano):
         
         while qtd > 0:
             
-            #for k, v in conteudo.items():
+            '''
+            for k, v in conteudo.items():
                 
-                '''
+                
                 if v[0] == '1708':
                     print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 elif v[0] == '5952':
                     print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
-                '''
+              
                 
-                # OU
+                OU
                 
-                '''           
+                     
                 print(f'{k}; {v[0]}; {v[1]}; {v[2]};')
                 
                 del conteudo[k][0]
@@ -209,14 +210,18 @@ def itens(mes, ano):
                 del conteudo[k][0]
                 
                 qtd = qtd - 3 
-                '''
+            '''
 
             caminhoSaida = ('C:' + os.sep + 'Users' + os.sep + os.getlogin() + os.sep + 'Desktop' + os.sep) # caminho de saida para o arquivo
             novoArquivo = caminhoSaida + f'{nomeArquivo}.txt' # tipo de arquivo
-            with open(novoArquivo, 'w', newline='') as linhasSaida:
+            
+            with open(novoArquivo, 'a', newline='') as linhasSaida:
                 escritaArquivo = csv.writer(linhasSaida) 
+                
                 for k, v in conteudo.items():
-                    escritaArquivo.writerow(f'{k}; {v[0]}; {v[1]}; {v[2]};') # escrita do conteudo no arquivo
+                    
+                    saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};')
+                    escritaArquivo.writerow([saidaConteudo]) # escrita do conteudo no arquivo
 
                     del conteudo[k][0]
                     del conteudo[k][0]
@@ -224,7 +229,7 @@ def itens(mes, ano):
 
                     qtd = qtd - 3                      
 
-                        
+                       
 if mes in verificacaoMes:
     try:
         calendario = itens(mes, ano) # funçao para buscar os itens da agenda tributaria
