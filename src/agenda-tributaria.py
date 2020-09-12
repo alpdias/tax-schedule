@@ -127,7 +127,6 @@ def pegarUrls(mes, ano):
     dicio = {} # dicionario para adicionar o conteudo
 
     for a in links:
-
         caminho = a['href'] # links
         dia = a.text.strip() # valor dentro da tag 'a'
         dicio[dia] = f'{caminho}' # colocando dentro do dicionario
@@ -152,7 +151,7 @@ def itens(mes, ano):
         listaDia.append(k)
 
     for k, v in calendario.items(): # laço para separar os link's dos eventos da agenda
-
+        
         url = v # link's de cada dia da agenda
 
         cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
@@ -177,6 +176,7 @@ def itens(mes, ano):
             
             if quantidade % 3 != 0:
                 pass
+
             else:
                 for linhas in item:
                     itemTexto = (linhas.text).replace('\xa0','').replace('\n','')
@@ -224,7 +224,6 @@ def itens(mes, ano):
                 escritaArquivo = csv.writer(linhasSaida, escapechar=' ', quoting=csv.QUOTE_NONE) 
                 
                 for k, v in conteudo.items():
-                    
                     saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};')
                     escritaArquivo.writerow([saidaConteudo]) # escrita do conteudo no arquivo
 
@@ -236,7 +235,6 @@ def itens(mes, ano):
 
                        
 if mes in verificacaoMes:
-    
     try:
         calendario = itens(mes, ano) # funçao para buscar os itens da agenda tributaria
     except AttributeError:
