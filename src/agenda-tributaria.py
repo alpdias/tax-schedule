@@ -30,9 +30,9 @@ menuNumero = [mesProximo, mesAtual, mesAnterior] # lista com os meses para criar
 def mesCalendario(mes):
     
     """
-    -> Retornar o nome do mes equivalente ao numero
-    :param mes: Numero do mes
-    :return: Nome do mes
+    -> retornar o nome do mes equivalente ao numero
+    :param mes: numero do mes
+    :return: nome do mes
     """
     
     if mes == 1:
@@ -74,10 +74,10 @@ menuTexto.append(mesCalendario(mesAnterior))
 def arteNome(nome, timeSleep=0):
 
     """
-    -> Cria uma arte ASCII com o nome enviado
-    :param nome: Texto para criar a arte
-    :para timeSleep: Tempo de espera (opcional)
-    :return: Retorna arte ASCII
+    -> cria uma arte ASCII com o nome enviado
+    :param nome: texto para criar a arte
+    :para timeSleep: tempo de espera (opcional)
+    :return: retorna arte ASCII
     """
     
     f = Figlet(font='slant') # recebe a funçao mais a fonte a ser utilizada
@@ -92,6 +92,7 @@ arteNome('Agenda Tributaria', 1) # funçao com arte ASCII
 print('')
 
 for i, menuTexto in enumerate(menuTexto):  # loop para criar menu
+    
     print(f'[{menuNumero[0]}] {menuTexto.title()}')
     menuNumero.pop(0)
     
@@ -104,10 +105,10 @@ print('')
 def pegarUrls(mes, ano):
     
     """
-    -> Obtem as url's dos dias da agenda tributaria
-    :param mes: Mes de referencia
-    :param ano: Ano de referencia
-    return: Retorna um dicionario com os dias e as url's dos eventos
+    -> obtem as url's dos dias da agenda tributaria
+    :param mes: mes de referencia
+    :param ano: ano de referencia
+    return: retorna um dicionario com os dias e as url's dos eventos
     """
     
     url = f'https://receita.economia.gov.br/acesso-rapido/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
@@ -127,6 +128,7 @@ def pegarUrls(mes, ano):
     dicio = {} # dicionario para adicionar o conteudo
 
     for a in links:
+        
         caminho = a['href'] # links
         dia = a.text.strip() # valor dentro da tag 'a'
         dicio[dia] = f'{caminho}' # colocando dentro do dicionario
@@ -137,10 +139,10 @@ def pegarUrls(mes, ano):
 def itens(mes, ano):
     
     """
-    -> Obtem os itens da agenda tributaria a partir de uma url
-    :param mes: Mes de referencia
-    :param ano: Ano de referencia
-    return: Retorna os eventos da agenda tributaria no modelo csv
+    -> obtem os itens da agenda tributaria a partir das url's
+    :param mes: mes de referencia
+    :param ano: ano de referencia
+    return: Retorna os eventos da agenda tributaria em um arquivo no modelo csv
     """
 
     calendario = pegarUrls(mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes e ano selecionado
@@ -148,6 +150,7 @@ def itens(mes, ano):
     listaDia = [] # lista para os dias da agenda
 
     for k, v in calendario.items(): # laço para separar os dias em lista
+        
         listaDia.append(k)
 
     for k, v in calendario.items(): # laço para separar os link's dos eventos da agenda
@@ -169,6 +172,7 @@ def itens(mes, ano):
         lista = []
 
         for itens in elemento: # laço para obter os conteudo da agenda tributaria
+            
             item = itens.findAll('td')
             complemento = itens.find('strong')
             
@@ -224,6 +228,7 @@ def itens(mes, ano):
                 escritaArquivo = csv.writer(linhasSaida, escapechar=' ', quoting=csv.QUOTE_NONE) 
                 
                 for k, v in conteudo.items():
+                    
                     saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};')
                     escritaArquivo.writerow([saidaConteudo]) # escrita do conteudo no arquivo
 
@@ -237,6 +242,7 @@ def itens(mes, ano):
 if mes in verificacaoMes:
     try:
         calendario = itens(mes, ano) # funçao para buscar os itens da agenda tributaria
+        
     except AttributeError:
         print('Mês de referência sem conteúdo!')
 
