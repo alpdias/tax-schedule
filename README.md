@@ -40,6 +40,6 @@ pt-BR</br>
 
   *   On Linux systems the file is saved inside the workbook that is running the script, and on the Windows system the file is saved on the Desktop.
   
-  *   The purpose of this project is entirely for studies and learning, relinquishing any responsibility for the use of the data generated, the data source used to obtain the data is the website (http://receita.economia.gov.br/ quick-access / tax-agenda) that has no connection with this project.
+  *   The purpose of this project is entirely for studies and learning, relinquishing any responsibility for the use of the data generated, the data source used to obtain the data is the website (http://receita.economia.gov.br/quick-access/tax-agenda) that has no connection with this project.
   
 ---------------------------------------------------------------------------------------------------------------
