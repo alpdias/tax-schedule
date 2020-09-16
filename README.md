@@ -2,7 +2,7 @@
 
 Script <strong>Python</strong> para obter a agenda tributária da receita federal (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) e gerar um arquivo de texto no modelo csv.
 
-<strong>Para saber mais e conhecer a versão web acesse:</strong> https://paulodeveloper.netlify.app/
+<strong>Disponível no meu portifólio:</strong> https://paulodeveloper.netlify.app/
 
 Andamento -> 100% 
 
@@ -25,7 +25,7 @@ pt-BR</br>
 
 Script <strong>Python</strong> to obtain the tax agenda of the Federal Revenue (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) and generate a text file in the model csv.
 
-<strong>To learn more and see the web version visit:</strong> https://paulodeveloper.netlify.app/
+<strong>Available in my portfolio:</strong> https://paulodeveloper.netlify.app/
 
 Progress -> 100%
 
