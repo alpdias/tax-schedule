@@ -2,12 +2,6 @@
 
 Script <strong>Python</strong> para obter a agenda tributária da receita federal (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) e gerar um arquivo de texto no modelo csv.
 
-#### ATENÇÃO ####
-
-Esse script foi integrado como base em um projeto Django, onde foi criado um Aplicativo web utilizando <strong>Python</strong>, <strong>Django</strong> e <strong>JavaScript</strong> para obter a agenda tributária da receita federal (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) e gerar um arquivo de texto no modelo csv para download ou um arquivo de integração para o calendário do Microsoft Outlook dependendo da escolha do usuário.
-
-<strong>Disponível no meu portifólio:</strong> https://paulodeveloper.netlify.app/
-
 Andamento -> 100% 
 
 Python</br>
@@ -16,6 +10,12 @@ Codificação: -&lowast;- coding: utf-8 -&lowast;-</br>
 pt-BR</br>
 
 ![agenda-tributaria](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria.png)
+
+#### ATENÇÃO !!! ####
+
+Esse script foi integrado como base em um projeto Django, onde foi criado um Aplicativo web utilizando <strong>Python</strong>, <strong>Django</strong> e <strong>JavaScript</strong> para obter a agenda tributária da receita federal (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) e gerar um arquivo de texto no modelo csv para download ou um arquivo de integração para o calendário do Microsoft Outlook dependendo da escolha do usuário.
+
+<strong>Disponível no meu portifólio:</strong> https://paulodeveloper.netlify.app/
 
 <strong>Nota:</strong> 
 
@@ -29,12 +29,6 @@ pt-BR</br>
 
 Script <strong>Python</strong> to obtain the tax agenda of the Federal Revenue (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) and generate a text file in the model csv.
 
-#### ATTENTION ####
-
-This script was integrated as a basis in a Django project, where a Web Application was created using <strong>Python</strong>, <strong>Django</strong> and <strong>JavaScript</strong> to obtain the tax agenda of federal revenue (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) and generate a text file in the csv template for download or an integration file for the Microsoft Outlook calendar depending on the user's choice .
-
-<strong>Available in my portfolio:</strong> https://paulodeveloper.netlify.app/
-
 Progress -> 100%
 
 Python</br>
@@ -43,6 +37,12 @@ Coding: -&lowast;- coding: utf-8 -&lowast;-</br>
 pt-BR</br>
 
 ![agenda-tributaria](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria.png)
+
+#### ATTENTION !!! ####
+
+This script was integrated as a basis in a Django project, where a Web Application was created using <strong>Python</strong>, <strong>Django</strong> and <strong>JavaScript</strong> to obtain the tax agenda of federal revenue (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) and generate a text file in the csv template for download or an integration file for the Microsoft Outlook calendar depending on the user's choice .
+
+<strong>Available in my portfolio:</strong> https://paulodeveloper.netlify.app/
 
 <strong>Note:</strong> 
 
