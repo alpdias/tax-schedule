@@ -17,6 +17,8 @@ Esse script foi integrado como base em um projeto Django, onde foi criado um Apl
 
 <strong>Disponível no meu portifólio:</strong> https://paulodeveloper.netlify.app/
 
+![agenda-tributaria-resultado](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria-resultado.png)
+
 <strong>Nota:</strong> 
 
   *   Em sistemas Linux o arquivo é salvo dentro da pasta de trabalho que está rodando o script, e no sistema Windows o arquivo é salvo na área de trabalho da máquina.
@@ -43,6 +45,8 @@ pt-BR</br>
 This script was integrated as a basis in a Django project, where a Web Application was created using <strong>Python</strong>, <strong>Django</strong> and <strong>JavaScript</strong> to obtain the tax agenda of federal revenue (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) and generate a text file in the csv template for download or an integration file for the Microsoft Outlook calendar depending on the user's choice .
 
 <strong>Available in my portfolio:</strong> https://paulodeveloper.netlify.app/
+
+![agenda-tributaria-resultado](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria-resultado.png)
 
 <strong>Note:</strong> 
 
