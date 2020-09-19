@@ -19,6 +19,11 @@ Esse script foi integrado como base em um projeto Django, onde foi criado um apl
 
 ![agenda-tributaria-resultado](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria-resultado.png)
 
+<strong>Módulos Python</strong>
+
+ > pip install django</br>
+ > pip install bs4</br>
+
 <strong>Nota:</strong> 
 
   *   Em sistemas Linux o arquivo é salvo dentro da pasta de trabalho que está rodando o script, e no sistema Windows o arquivo é salvo na área de trabalho da máquina.
@@ -47,6 +52,11 @@ This script was integrated as a basis in a Django project, where a web applicati
 <strong>Available in my portfolio:</strong> https://paulodeveloper.netlify.app/
 
 ![agenda-tributaria-resultado](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria-resultado.png)
+
+<strong>Python modules</strong>
+
+ > pip install django</br>
+ > pip install bs4</br>
 
 <strong>Note:</strong> 
 
