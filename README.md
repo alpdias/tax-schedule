@@ -29,6 +29,7 @@ Esse script foi integrado como base em um projeto Django, onde foi criado um apl
 
  > pip install django</br>
  > pip install bs4</br>
+ > pip install requests</br>
  
  </br>
 
@@ -71,6 +72,7 @@ This script was integrated as a basis in a Django project, where a web applicati
 
  > pip install django</br>
  > pip install bs4</br>
+ > pip install requests</br>
  
  </br>
 
