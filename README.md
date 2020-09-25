@@ -17,7 +17,8 @@ pt-BR</br>
 
  > pip install bs4</br>
  > pip install requests</br>
- 
+ > pip install pyfiglet</br>
+
  </br>
 
 <strong>Nota:</strong> 
@@ -47,6 +48,7 @@ pt-BR</br>
 
  > pip install bs4</br>
  > pip install requests</br>
+ > pip install pyfiglet</br>
  
  </br>
 
