@@ -13,21 +13,8 @@ pt-BR</br>
 
 </br>
 
-#### ATENÇÃO !!! ####
-
-Esse script foi integrado como base em um projeto Django, onde foi criado um aplicativo web utilizando <strong>Python</strong>, <strong>Django</strong> e <strong>JavaScript</strong> para obter a agenda tributária da receita federal (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) e gerar um arquivo de texto no modelo csv para download ou um arquivo de integração para o calendário do Microsoft Outlook dependendo da escolha do usuário.
-
-<strong>Disponível no meu portifólio:</strong> https://paulodeveloper.netlify.app/
-
-</br>
-
-![agenda-tributaria-resultado](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria-resultado.png)
-
-</br>
-
 <strong>Módulos Python</strong>
 
- > pip install django</br>
  > pip install bs4</br>
  > pip install requests</br>
  
@@ -56,21 +43,8 @@ pt-BR</br>
 
 </br>
 
-#### ATTENTION !!! ####
-
-This script was integrated as a basis in a Django project, where a web application was created using <strong>Python</strong>, <strong>Django</strong> and <strong>JavaScript</strong> to obtain the tax agenda of federal revenue (http://receita.economia.gov.br/acesso-rapido/agenda-tributaria) and generate a text file in the csv template for download or an integration file for the Microsoft Outlook calendar depending on the user's choice .
-
-<strong>Available in my portfolio:</strong> https://paulodeveloper.netlify.app/
-
-</br>
-
-![agenda-tributaria-resultado](https://github.com/alpdias/agenda-tributaria-python/blob/master/img/agenda-tributaria-resultado.png)
-
-</br>
-
 <strong>Python modules</strong>
 
- > pip install django</br>
  > pip install bs4</br>
  > pip install requests</br>
  
