@@ -113,8 +113,8 @@ def pegarUrls(mes, ano):
     :param ano: ano de referencia
     return: retorna um dicionario com os dias e as url's dos eventos
     """
-    
-    url = f'https://receita.economia.gov.br/acesso-rapido/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
+
+    url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
     cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para entrar no site simulando um usuario
     requisicao = requests.get(url, headers=cabecalho) # requisiçao
     soup = BeautifulSoup(requisicao.text, 'html.parser') # tratando o html
