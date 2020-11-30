@@ -28,9 +28,9 @@ menuNumero = [mesProximo, mesAtual, mesAnterior] # lista com os meses para criar
 def mesCalendario(mes):
     
     """
-    -> retornar o nome do mes equivalente ao numero
-    :param mes: numero do mes
-    :return: nome do mes
+    -> Retornar o nome do mes equivalente ao numero\
+    \n:param mes: Numero do mes\
+    \n:return: Nome do mes\
     """
     
     if mes == 1:
@@ -79,14 +79,15 @@ menuTexto.append(mesCalendario(mesAnterior))
 def arteNome(nome, timeSleep=0):
 
     """
-    -> cria uma arte ASCII com o nome enviado
-    :param nome: texto para criar a arte
-    :para timeSleep: tempo de espera (opcional)
-    :return: retorna arte ASCII
+    -> Cria uma arte ASCII com o nome enviado\
+    \n:param nome: Texto para criar a arte\
+    \n:para timeSleep: Tempo de espera (opcional)\
+    \n:return: Retorna arte ASCII\
     """
     
     f = Figlet(font='slant') # recebe a funçao mais a fonte a ser utilizada
     nome = f.renderText(nome) # recebe o texto
+    
     print(nome) # mostra o texto em forma de arte ASCII
     sleep(timeSleep)
 
@@ -108,10 +109,10 @@ print('')
 def pegarUrls(mes, ano):
     
     """
-    -> obtem as url's dos dias da agenda tributaria
-    :param mes: mes de referencia
-    :param ano: ano de referencia
-    return: retorna um dicionario com os dias e as url's dos eventos
+    -> Obtem as url's dos dias da agenda tributaria\
+    \n:param mes: Mes de referencia\
+    \n:param ano: Ano de referencia\
+    \n:return: Retorna um dicionario com os dias e as url's dos eventos\
     """
 
     url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
@@ -121,6 +122,7 @@ def pegarUrls(mes, ano):
     corpo = soup.find('div', {'id': 'parent-fieldname-text'}) # procurando uma 'div' dentro do html pelo id
     elementos = corpo.find('ul') # recebendo a lista 'ul' dentro da 'div'
     links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
+    
     dicio = {} # dicionario para adicionar o conteudo
 
     for a in links:        
@@ -134,13 +136,14 @@ def pegarUrls(mes, ano):
 def itens(mes, ano):
     
     """
-    -> obtem os itens da agenda tributaria a partir das url's
-    :param mes: mes de referencia
-    :param ano: ano de referencia
-    return: Retorna os eventos da agenda tributaria em um arquivo no modelo csv
+    -> Obtem os itens da agenda tributaria a partir das url's\
+    \n:param mes: Mes de referencia\
+    \n:param ano: Ano de referencia\
+    \n:return: Retorna os eventos da agenda tributaria em um arquivo no modelo csv\
     """
 
     calendario = pegarUrls(mesCalendario(mes), ano) # funçao para buscar um dicionario contendo a agenda do mes e ano selecionado
+    
     listaDia = [] # lista para os dias da agenda
     
     for k, v in calendario.items(): # laço para separar os dias em lista
@@ -153,6 +156,7 @@ def itens(mes, ano):
         soup = BeautifulSoup(requisicao.text, 'html.parser') 
         corpo = soup.find('div', {'id': 'parent-fieldname-text'}) 
         elemento = corpo.findAll('tbody') # recebendo o corpo da tabela 'tbody' dentro da 'div'
+        
         lista = []
 
         for itens in elemento: # laço para obter os conteudo da agenda tributaria       
@@ -169,14 +173,15 @@ def itens(mes, ano):
                     lista.append(itemTexto)
 
         conteudo = {} # dicionario para armazenar os dados da agenda por dia
+        
         conteudo[listaDia[0]] = lista
         listaDia.pop(0)
+        
         qtd = len(lista)
         
         while qtd > 0:
             
             '''
-            
             OPCAO COM FILTRO
             
             for k, v in conteudo.items():
@@ -211,16 +216,18 @@ def itens(mes, ano):
                 for k, v in conteudo.items():
                     saidaConteudo = (f'{k}; {v[0]}; {v[1]}; {v[2]};')
                     escritaArquivo.writerow([saidaConteudo]) # escrita do conteudo no arquivo
+                    
                     del conteudo[k][0]
                     del conteudo[k][0]
                     del conteudo[k][0]
+                    
                     qtd = qtd - 3                      
 
                        
 if mes in verificacaoMes:
     
     try:
-        calendario = itens(mes, ano) # funçao para buscar os itens da agenda tributaria
+        calendario = itens(mes, ano)
         
     except AttributeError:
         print('Mês de referência sem conteúdo!')
