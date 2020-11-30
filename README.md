@@ -5,7 +5,6 @@ Script <strong>Python</strong> para obter a agenda tributária da receita federa
 Andamento -> 100% 
 
 Python</br>
-Microsoft VSCode</br>
 Codificação: -&lowast;- coding: utf-8 -&lowast;-</br>
 pt-BR</br>
 
@@ -36,7 +35,6 @@ Script <strong>Python</strong> to obtain the tax agenda of the Federal Revenue (
 Progress -> 100%
 
 Python</br>
-Microsoft VSCode</br>
 Coding: -&lowast;- coding: utf-8 -&lowast;-</br>
 pt-BR</br>
 
