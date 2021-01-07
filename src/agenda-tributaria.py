@@ -33,7 +33,10 @@ def mesCalendario(mes):
     \n:return: Nome do mes\
     """
     
-    if mes == 1:
+    if mes == 0:
+        mes = 'dezembro'
+
+    elif mes == 1:
         mes = 'janeiro'
         
     elif mes == 2:
@@ -115,7 +118,13 @@ def pegarUrls(mes, ano):
     \n:return: Retorna um dicionario com os dias e as url's dos eventos\
     """
 
-    url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
+    if mes == 'dezembro':
+        ano = 2020
+        url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
+    
+    else:
+        url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
+
     cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para entrar no site simulando um usuario
     requisicao = requests.get(url, headers=cabecalho) # requisiçao
     soup = BeautifulSoup(requisicao.text, 'html.parser') # tratando o html
