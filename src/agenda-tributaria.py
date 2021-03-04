@@ -129,16 +129,17 @@ def pegarUrls(mes, ano):
     requisicao = requests.get(url, headers=cabecalho) # requisiçao
     soup = BeautifulSoup(requisicao.text, 'html.parser') # tratando o html
     corpo = soup.find('div', {'id': 'parent-fieldname-text'}) # procurando uma 'div' dentro do html pelo id
-    elementos = corpo.find('ul') # recebendo a lista 'ul' dentro da 'div'
-    links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
+    print(requisicao)
+    #elementos = corpo.find('ul') # recebendo a lista 'ul' dentro da 'div'
+    #links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
     
     dicio = {} # dicionario para adicionar o conteudo
-
+    """
     for a in links:        
         caminho = a['href'] # links
         dia = a.text.strip() # valor dentro da tag 'a'
         dicio[dia] = f'{caminho}' # colocando dentro do dicionario
-
+    """
     return dicio
 
 
@@ -232,7 +233,10 @@ def itens(mes, ano):
                     
                     qtd = qtd - 3                      
 
-                       
+
+calendario = itens(mes, ano)
+
+"""                
 if mes in verificacaoMes:
     
     try:
@@ -243,4 +247,4 @@ if mes in verificacaoMes:
 
 else:
     print('Mês de referência inválido!')
-
+"""
