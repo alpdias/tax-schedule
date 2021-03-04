@@ -123,15 +123,14 @@ def pegarUrls(mes, ano):
         url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
     
     else:
-        url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/agenda-tributaria-{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
+        url = f'https://www.gov.br/receitafederal/pt-br/assuntos/agenda-tributaria/agenda-tributaria-{ano}/{mes}-{ano}/agenda-tributaria-{mes}-{ano}' # url para a requisiçao no site
 
     cabecalho = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'} # cabeçalho para entrar no site simulando um usuario
     requisicao = requests.get(url, headers=cabecalho) # requisiçao
     soup = BeautifulSoup(requisicao.text, 'html.parser') # tratando o html
     corpo = soup.find('div', {'id': 'parent-fieldname-text'}) # procurando uma 'div' dentro do html pelo id
-    print(requisicao)
-    #elementos = corpo.find('ul') # recebendo a lista 'ul' dentro da 'div'
-    #links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
+    elementos = corpo.find('ul') # recebendo a lista 'ul' dentro da 'div'
+    links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
     
     dicio = {} # dicionario para adicionar o conteudo
     """
@@ -233,10 +232,7 @@ def itens(mes, ano):
                     
                     qtd = qtd - 3                      
 
-
-calendario = itens(mes, ano)
-
-"""                
+           
 if mes in verificacaoMes:
     
     try:
@@ -247,4 +243,3 @@ if mes in verificacaoMes:
 
 else:
     print('Mês de referência inválido!')
-"""
