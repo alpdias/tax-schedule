@@ -133,12 +133,12 @@ def pegarUrls(mes, ano):
     links =  elementos.findAll('a', href=True) # recebendo os elemento html com os links
     
     dicio = {} # dicionario para adicionar o conteudo
-    """
+    
     for a in links:        
         caminho = a['href'] # links
         dia = a.text.strip() # valor dentro da tag 'a'
         dicio[dia] = f'{caminho}' # colocando dentro do dicionario
-    """
+    
     return dicio
 
 
